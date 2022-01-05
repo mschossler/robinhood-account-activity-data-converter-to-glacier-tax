@@ -3,7 +3,7 @@ This application converts data from account activity from Robinhood (and other s
 
 You may find it difficult to retrieve the information from the 1099-B form from Robinhood and add it to Glacier if you buy and sell stocks frequently. This application was created to facilitate this process. Here are the steps you have to follow:
 
-1- Contact Robinhood (or other stockbrokers) to obtain an account activity (or transaction history) from your first transaction until 12/31/2020 in CSV format with heads:
+1- Contact Robinhood (or other stockbrokers) to obtain an account activity (or transaction history) from your first transaction until 12/31/2020 in CSV format with heads (this is the standard heads for Robinhood):
 Activity,Date,Process,Date,Settle,Date,Account,Type,Instrument,Description,Trans,Code,Quantity,Price,Amount,Suppressed
 
 2- Bring the file account_acctivity.csv (with this name) to the same folder as the file taxes2020.ipynb. 
