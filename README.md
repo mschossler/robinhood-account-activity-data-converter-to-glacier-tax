@@ -1,9 +1,9 @@
 #  Robinhood account activity data converter to Glacier Tax
-This application converts data from account activity in Robinhood (and other stockbrokers that use a similar format) to the shape required by Glacier tax. It finds and matches stocks that were bought and sold on different days to calculate the profit and ultimately the income taxes for stock transactions for nonresident aliens. It also exports the data in the format required to be uploaded into glaciertax.com.
+This application converts data from account activity in Robinhood (and other stockbrokers that use a similar format) to the shape required by Glacier tax. It finds and matches stocks that were sold in 2020 with stocks previusly bought to calculate the profit and ultimately the income taxes for stock transactions for nonresident aliens. It also exports the data in the format required to be uploaded into glaciertax.com.
 
 You may find it difficult to retrieve the information from the 1099-B form from Robinhood and add it to Glacier if you buy and sell stocks frequently. This application was created to facilitate this process. Here are the steps you have to follow:
 
-1- Contact Robinhood (or other stockbrokers) to obtain account activity (or transaction history) from your first transaction until 12/31/2020 in CSV format with heads (this is the standard heads for Robinhood): Activity,Date,Process,Date,Settle,Date,Account,Type,Instrument,Description,Trans,Code,Quantity,Price,Amount,Suppressed
+1- Contact Robinhood (or other stockbrokers) to obtain account activity (or transaction history) from your first transaction until 12/31/2020 in CSV file with heads (this is the standard heads for Robinhood): Activity,Date,Process,Date,Settle,Date,Account,Type,Instrument,Description,Trans,Code,Quantity,Price,Amount,Suppressed
 
 2- Bring the file account_activity.csv (with this name) to the same folder as the file taxes2020.ipynb.
 
