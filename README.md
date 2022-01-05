@@ -11,7 +11,7 @@ Activity,Date,Process,Date,Settle,Date,Account,Type,Instrument,Description,Trans
 3- Run the code using Jupyter (check item 4 if you can't use Jupyter) and you should obtain a file 2020tax1099-B.csv with heads:
 name,acquired,sold,proceeds,cost
 
-4- If you don't have Jupyter installed in your machine you may upload taxes2020.ipynb and account_acctivity.csv to Google Colab (https://colab.research.google.com/?utm_source=scs-index#scrollTo=0cE_xvj-KuHw). The files must be in the same folder. Run the code. you may convert the file to .py and run it with your favorite python compiler as well. Libraries used are Pandas and io.
+4- If you don't have Jupyter installed in your machine you may upload taxes2020.ipynb and account_acctivity.csv to Google Colab (https://colab.research.google.com/?utm_source=scs-index#scrollTo=0cE_xvj-KuHw). The files must be in the same folder. Run the code. you may convert the file to .py and run it with your favorite python compiler as well. Libraries used are pandas and io.
 
 5- Follow the instructions to use the plugging from https://github.com/JiahaoShan/Glacier-tax-1099-B-Stock-Transactions-Helper to upload the file 2020tax1099-B.csv to glaciertax.com.
 
