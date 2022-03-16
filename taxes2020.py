@@ -1,19 +1,19 @@
 import pandas as pd, io
 import io
 pd.set_option("display.max_rows", 20, "display.max_columns", 20)
+import datetime  
 
 
-#file_data = pd.read_csv("statementfullnoamazon.csv")
 file_data = pd.read_csv("account_acctivity.csv")
 
 renam_data=file_data.rename(columns={'Activity Date':'date','Instrument':'instrument','Amount':'amount','Trans Code': 'code','Quantity':'st_quantity','Price':'price'})
 renam_data=renam_data.drop( ['Process Date','Settle Date','Account Type','Description','Suppressed'],axis=1 )
 renam_data=renam_data.loc[(renam_data.code=='SELL')|(renam_data.code=='BUY')]
 renam_data=renam_data.reset_index(drop=True)
-# renam_data=renam_data.loc[renam_data.code.isin(['SELL', 'BUY'])]     #or equivalent
 
 
-#____________________________transforms strings to float and intergers__________________________________
+
+#____________________________converts strings to float and integers__________________________________
 
 length=len(renam_data.loc[:,'st_quantity'])
 ntmp=[float(renam_data.loc[j,'st_quantity']) for j in range(length) ]
@@ -31,11 +31,8 @@ renam_data['float_amount']=pd.Series(ntmp)
 
 renam_data=renam_data.drop( ['st_quantity','price','amount'],axis=1 )
 
-#_________________sorte data by stock and date selecting only for sotcks relevant for 2019 or 2020 taxes__________________
 
-
-
-import datetime  
+#_________________sort data by stock and date selecting only for stocks relevant for 2019 or 2020 taxes__________________
 
 
 renam_data['date']=pd.to_datetime(renam_data['date'], format='%m/%d/%Y')
@@ -151,11 +148,11 @@ def manipulate_data(data_frame):#returns the data in a format as required by gla
         return final_data
 
 final_data=manipulate_data(data2020)
-#print(manipulate_data(data2019),manipulate_data(data2020),sep="\n \n") 
 
 
 
-#____________________________export data to a file__________________________________
+
+#____________________________export data to file__________________________________
 
 exp_data=final_data.drop( ['qtt'],axis=1 ).rename(columns={'instrument':'name','buy_date':'acquired','sale_date': 'sold','sale_price':'proceeds'})
 
@@ -176,7 +173,7 @@ exp_data.to_csv(r'2020tax1099-B.csv', index = False, header= True)
 
 print(exp_data.proceeds.sum(),exp_data.cost.sum())
 
-#________________________________analyzing my profits__________________________________________________________
+#________________________________calculates the profits__________________________________________________________
 exp_data['profit']=pd.Series([exp_data.loc[i,'proceeds']-exp_data.loc[i,'cost'] for i in range(len(exp_data))])
 lost=0
 gain=0
