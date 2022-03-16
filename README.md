@@ -9,7 +9,7 @@ You may find it difficult to retrieve the information from the 1099-B form from 
 
 3- Run the python script (check item 4 to use Jupyter) and you should obtain a file 2020tax1099-B.csv with heads: name,acquired,sold,proceeds,cost
 
-4- If you want to use Jupyter the file taxes2020.ipynb is ready for you. If you don't have Jupyter installed in your machine you may upload taxes2020.ipynb and account_acctivity.csv to Google Colab (https://colab.research.google.com/?utm_source=scs-index#scrollTo=0cE_xvj-KuHw). The files must be in the same folder. Run the code.
+4- If you want to use Jupyter, the file taxes2020.ipynb is ready for you. If you don't have Jupyter installed in your machine you may upload taxes2020.ipynb and account_acctivity.csv to Google Colab (https://colab.research.google.com/?utm_source=scs-index#scrollTo=0cE_xvj-KuHw). The files must be in the same folder. Run the code.
 
 5- Follow the instructions to use the javascript plugin from https://github.com/JiahaoShan/Glacier-tax-1099-B-Stock-Transactions-Helper to upload the file 2020tax1099-B.csv to glaciertax.com.
 
